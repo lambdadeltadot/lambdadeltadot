@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lambdadeltadot</title>
+  <style>
+    * {
+      transition: all 1s ease-in-out;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #title {
+      color: rgb(0, 0, 0);
+      font-size: 60px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1 id='title'>Lamdadeltadot</h1>
+  <script>
+    !function (h1, body) {
+      function randomize() {
+        return Math.floor(Math.random() * 256);
+      }
+
+      window.setInterval(function () {
+        var background = [randomize(), randomize(), randomize()];
+        var color = [];
+        for (var i=0; i<background.length; ++i) {
+          color[i] = 255 - background[i];
+        }
+
+        body.style.backgroundColor = 'rgba('.concat(background.join(','), ')');
+        h1.style.color = 'rgba('.concat(color.join(','), ')');
+      }, 2500);
+    }(document.getElementById('title'), document.body);
+  </script>
+</body>
+</html>
